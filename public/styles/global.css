@@ -15,7 +15,7 @@
 
 html,
 body {
-  background-color: rgb(247, 245, 245);
+  background-color: white;
   font-family: "Quicksand", serif;
 }
 
@@ -89,7 +89,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #e3eee6;
+  background: #e8eeea;
   min-height: 100vh;
   gap: 2rem;
 }
@@ -146,13 +146,14 @@ section.todo-section button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 0.5rem 1rem; /* Adjust padding for better size */
-  width: auto; /* Ensure the button width is not stretched */
-  max-width: 200px; /* Optional: Set a maximum width */
+  height: auto; /* Make sure the button height is auto */
+  line-height: normal; /* Prevents any unnatural stretching */
+  width: auto; /* Ensures button size isn't restricted */
 }
 
 section.completed-section {
   padding: 1rem;
-  max-height: 800px;
+  max-height: 300px;
   height: 100%;
   width: 100%;
   background: radial-gradient(
@@ -162,6 +163,33 @@ section.completed-section {
   );
   border-radius: 10px;
   box-shadow: rgba(163, 163, 163, 0.58) 0px 2px 4px 0px;
+  overflow-y: auto;
+}
+
+/* Stylish scrollbar for WebKit (Chrome, Edge, Safari) */
+section.completed-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+section.completed-section::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+section.completed-section::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+section.completed-section::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+/* For Firefox */
+section.completed-section {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #f0f0f0;
 }
 
 section.completed-section h2 {
@@ -179,12 +207,12 @@ footer {
   padding: 1rem;
   bottom: 0;
   text-align: center;
-  background: #0c3b2e;
-  background: linear-gradient(
+  background: #e9d8c5;
+  /* background: linear-gradient(
     90deg,
     rgba(12, 59, 46, 1) 0%,
     rgba(109, 151, 115, 1) 40%,
     rgba(187, 138, 82, 1) 83%
-  );
+  ); */
   width: 100%;
 }

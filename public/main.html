@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/global.css" />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -47,8 +47,12 @@
       <section class="completed-section">
         <h2>completed tasks</h2>
         <ul id="completed-list">
-          <li>Water the plants</li>
-          <li>Clean my cupboard</li>
+          <div class="completed-task">
+            <li>Water the plants</li>
+            <button class="delete-btn">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </ul>
       </section>
     </main>

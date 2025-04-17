@@ -1,0 +1,21 @@
+{
+  "name": "simple-to-do-app",
+  "version": "1.0.0",
+  "description": "Absolutely! Even a simple to-do list app can feel polished and feature-rich with a few thoughtfully designed sections. Here are some cool and manageable ones you can add:",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
