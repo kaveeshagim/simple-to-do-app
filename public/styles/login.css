@@ -1,0 +1,26 @@
+/* login.css */
+
+#login-page {
+  font-family: "Quicksand", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  transition: opacity 0.5s ease;
+  background: #6d9773;
+  background: radial-gradient(
+    circle,
+    rgba(109, 151, 115, 1) 40%,
+    rgba(247, 218, 136, 1) 62%
+  );
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

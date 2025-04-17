@@ -1,5 +1,7 @@
+/* landing.css */
+
 #landing-page {
-  font-family: Arial, sans-serif;
+  font-family: "Quicksand", serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,13 +9,42 @@
   margin: 0;
   text-align: center;
   transition: opacity 0.5s ease;
-  background: #0c3b2e;
-  background: linear-gradient(
-    90deg,
-    rgba(12, 59, 46, 1) 0%,
+  background: #6d9773;
+  background: radial-gradient(
+    circle,
     rgba(109, 151, 115, 1) 40%,
-    rgba(187, 138, 82, 1) 83%
+    rgba(247, 218, 136, 1) 62%
   );
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#landing-page h1,
+#landing-page p,
+#enter-btn {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#landing-page .content .content-title {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3rem;
 }
 
 #landing-page.hidden {
@@ -21,16 +52,30 @@
   pointer-events: none;
 }
 
-button {
-  padding: 1rem;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 1rem;
+#landing-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
 }
 
-button:hover {
-  background-color: #45a049;
+#landing-page p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+button#enter-btn {
+  padding: 1rem 2rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  animation-delay: 0.9s;
+  transition: transform 0.3s ease;
+}
+
+button#enter-btn:hover {
+  background-color: #135c47;
+  transform: scale(1.05);
 }
