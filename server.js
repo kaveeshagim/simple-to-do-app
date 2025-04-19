@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 
 const app = express();
 const port = 3000;
@@ -79,6 +79,16 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (res, req) => {
   const { username, password } = req.body;
+
+  const passwordRegex =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+
+  if (!passwordRegex.test(password)) {
+    return res.status(400).json({
+      message:
+        "Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.",
+    });
+  }
 
   db.query(
     "SELECT * FROM users WHERE username = ?",
